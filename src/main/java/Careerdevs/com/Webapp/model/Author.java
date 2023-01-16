@@ -2,6 +2,7 @@ package Careerdevs.com.Webapp.model;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 @Entity
@@ -14,15 +15,15 @@ public class Author {
     public String lastNme;
 
     @ManyToMany(mappedBy = "authors")
-    private Set<Book> books;
+    private Set<Book> books = new HashSet<>();
 
     public Author() {
     }
 
-    public Author(String firstName, String lastNme, Set<Book> books) {
+    public Author(String firstName, String lastNme) {
         this.firstName = firstName;
         this.lastNme = lastNme;
-        this.books = books;
+
     }
 
     public Long getId() {
