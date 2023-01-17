@@ -12,7 +12,7 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long Id;
     public String firstName;
-    public String lastNme;
+    public String lastName;
 
     @ManyToMany(mappedBy = "authors")
     private Set<Book> books = new HashSet<>();
@@ -22,7 +22,7 @@ public class Author {
 
     public Author(String firstName, String lastNme) {
         this.firstName = firstName;
-        this.lastNme = lastNme;
+        this.lastName = lastNme;
 
     }
 
@@ -43,11 +43,11 @@ public class Author {
     }
 
     public String getLastNme() {
-        return lastNme;
+        return lastName;
     }
 
     public void setLastNme(String lastNme) {
-        this.lastNme = lastNme;
+        this.lastName = lastNme;
     }
 
     public Set<Book> getBooks() {
@@ -63,7 +63,7 @@ public class Author {
         return "Author{" +
                 "Id=" + Id +
                 ", firstName='" + firstName + '\'' +
-                ", lastNme='" + lastNme + '\'' +
+                ", lastNme='" + lastName + '\'' +
                 ", books=" + books +
                 '}';
     }
